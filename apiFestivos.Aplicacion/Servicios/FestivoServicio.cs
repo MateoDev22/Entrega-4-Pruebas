@@ -76,7 +76,7 @@ namespace apiFestivos.Aplicacion.Servicios
             return AgregarDias(fecha, diasLunes);
         }
 
-        private FechaFestivo ObtenerFestivo(int año, Festivo festivo)
+        public FechaFestivo ObtenerFestivo(int año, Festivo festivo)
         {
             FechaFestivo fechaFestivo = null;
             DateTime domingoPascua = AgregarDias(ObtenerInicioSemanaSanta(año), 7);
@@ -134,6 +134,7 @@ namespace apiFestivos.Aplicacion.Servicios
             // Verificar si la fecha existe en la lista de festivos
             return festivos.Any(f => f.Fecha.Date == Fecha.Date);
         }
+
     }
 
 }
